@@ -1,0 +1,11 @@
+### 接口自动化框架
+- 框架基于 python 语言，使用 pytest + requests + allure
+- 支持 get、post、put、delete 请求方法，通过用例中 params、data、json 区分
+- 用例支持 yaml、字典dict格式
+- 支持数据驱动，用参数化参数字典去更新通用参数字典，更新后发起请求
+- 支持 mysql、redis 操作
+- 支持数据库连接单例，一个库在一个进程下只会建立一次连接
+- 支持多进程跑测，用例需独立无依赖，conftest.py 中包含多进程下只运行一次的 fileLock fixture
+- 支持多环境运行，通过命令行传参区分 --env
+- 单接口自动化：框架内容已包含案例
+- 流程接口自动化：可自行创建目录，创建test用例模块，调用common公共方法，自行组织用例流程

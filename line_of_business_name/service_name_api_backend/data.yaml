@@ -1,0 +1,107 @@
+get_student:
+  story: 查询学生接口
+  path: /student
+  method: get
+  headers: {}
+  params:
+    test: test
+  parameter_list:
+  - title: 获取学生信息-张三
+    data:
+      name: 张三
+    assert:
+      code: 0
+      msg: ok
+  - title: 获取学生信息-李四
+    data:
+      name: 李四
+    assert:
+      code: 0
+      msg: ok
+  - title: 获取学生信息-王五
+    data:
+      name: 王五
+    assert:
+      code: 0
+      msg: ok
+post_student:
+  story: 新增学生接口
+  path: /student
+  method: post
+  headers:
+    Content-Type: application/x-www-form-urlencoded
+  data:
+    test: test
+  parameter_list:
+  - title: 新增学生信息-张三
+    data:
+      name: 张三
+    assert:
+      code: 1
+      msg: ok
+  - title: 新增学生信息-李四
+    data:
+      name: 李四
+    assert:
+      code: 0
+      msg: ok
+  - title: 新增学生信息-王五
+    data:
+      name: 王五
+    assert:
+      code: 0
+      msg: ok
+put_student:
+  story: 更新学生接口
+  path: /student
+  method: put
+  headers:
+    Content-Type: application/json
+    Cookie: ''
+  json:
+    test: test
+  parameter_list:
+  - title: 更新学生信息-张三
+    data:
+      name: 张三
+    assert:
+      code: 0
+      msg: ok
+  - title: 更新学生信息-李四
+    data:
+      name: 李四
+    assert:
+      code: 0
+      msg: okk
+  - title: 更新学生信息-王五
+    data:
+      name: 王五
+    assert:
+      code: 0
+      msg: ok
+delete_student:
+  story: 删除学生接口
+  path: /student
+  method: delete
+  headers: {}
+  json:
+  - 1
+  parameter_list:
+  - title: 删除编号1的同学
+    data:
+    - 1
+    assert:
+      code: 0
+      msg: ok
+  - title: 删除编号2的同学
+    data:
+    - 2
+    assert:
+      code: 0
+      msg: ok
+  - title: 删除编号3的同学
+    data:
+    - 3
+    assert:
+      code: 0
+      msg: ok
